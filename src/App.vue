@@ -10,8 +10,12 @@
 </template>
 
 <script>
+
+
+
 import SiteHeader from './components/SiteHeader.vue';
 import SiteMain from './components/SiteMain.vue';
+
 
 export default {
   name: 'App',
@@ -24,7 +28,8 @@ export default {
 
 <style lang="scss">
 
-@import './assets/variables.scss'
+@import './assets/variables.scss';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 // #app {
 //   font-family: Avenir, Helvetica, Arial, sans-serif;
 //   -webkit-font-smoothing: antialiased;
