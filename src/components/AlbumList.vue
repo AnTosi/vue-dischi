@@ -1,6 +1,10 @@
 <template>
-    <div>
-
+    <div class="row">
+        <div class="col-2 album" v-for="album in music" :key="album.title">
+            <p>
+                {{album.title}}
+            </p>
+        </div>        
     </div>
 </template>
 
@@ -10,13 +14,14 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            characters: [],
+            music: [],
             API_URL: "https://flynn.boolean.careers/exercises/api/array/music",
         };
     },
 
     mounted() {
-        setTimeout(this.callApi, 3000);
+        // setTimeout(this.callApi, 3000);
+        this.callApi;
     },
 
     methods: {
@@ -33,3 +38,9 @@ export default {
 
 
 </script>
+
+<style lang="scss">
+    .album {
+        color: white;
+    }
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg_mainblue d-flex flex-wrap">
+    <div class="bg_mainblue">
         <AlbumList />
     </div>
 </template>
