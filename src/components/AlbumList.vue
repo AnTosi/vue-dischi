@@ -30,6 +30,8 @@ export default {
             .get(this.API_URL)
             .then((r) => {
                 console.log(r.data);
+                // this.music = r.data;
+                // console.log(this.music);
                 // this.loading = false;
             })
         }
