@@ -20,8 +20,7 @@ export default {
     },
 
     mounted() {
-        // setTimeout(this.callApi, 3000);
-        this.callApi;
+        setTimeout(this.callApi, 3000);
     },
 
     methods: {
@@ -30,8 +29,8 @@ export default {
             .get(this.API_URL)
             .then((r) => {
                 console.log(r.data);
-                // this.music = r.data;
-                // console.log(this.music);
+                this.music = r.data.response;
+                console.log(this.music);
                 // this.loading = false;
             })
         }
