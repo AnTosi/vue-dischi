@@ -1,5 +1,8 @@
 <template>
     <div class="justify-content-center d-flex flex-wrap py_90">
+        <div v-show="loading">
+            <Loader/>
+        </div>
         <div class="album py-2 card text-center py-3 px-3 mx-3 my-2" v-for="album in music" :key="album.title">
                 <img v-bind:src="album.poster" v-bind:alt="album.title">
                 <h3 class="my-3 px-2">
@@ -19,9 +22,12 @@
 
 <script>
 import axios from 'axios';
+import Loader from './Loader.vue';
 
 export default {
+  components: { Loader },
     data() {
+        this.loading = true;
         return {
             music: [],
             API_URL: "https://flynn.boolean.careers/exercises/api/array/music",
@@ -29,6 +35,7 @@ export default {
     },
 
     mounted() {
+        
         setTimeout(this.callApi, 3000);
     },
 
