@@ -12,8 +12,11 @@ export default {
 </script>
 
 <style lang="scss">
+
+@import '../assets/variables.scss';
+
     .bg_bluegrey {
-        background: grey;
+        background: $bluegrey;
         height: 70px;
         img {
             height: 50px;
