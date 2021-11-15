@@ -20,6 +20,5 @@ export default {
 
     .bg_mainblue {
         background-color: $mainblue;
-        height: 600px;
     }
 </style>

@@ -30,6 +30,10 @@ export default {
 
 @import './assets/variables.scss';
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+body { 
+  font-family: "Lato"; 
+  }
 // #app {
 //   font-family: Avenir, Helvetica, Arial, sans-serif;
 //   -webkit-font-smoothing: antialiased;
