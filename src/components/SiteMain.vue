@@ -16,10 +16,6 @@ export default {
         AlbumList
     },
 
-    props: {
-        genre: String
-    },
-
     methods: {
         logGenre(genre) {
             console.log(genre);

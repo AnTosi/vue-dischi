@@ -23,11 +23,9 @@ export default {
     SiteMain
   },
 
-  data() {
-    
-      
-    }
-  ,
+  props: {
+    genre: String
+  },
 
   methods: {
     passGenre(genre) {

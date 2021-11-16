@@ -61,14 +61,14 @@ export default {
         },
 
         logGenre(){
-            console.log(this.genre);
+            console.log(genre);
         }
     },
 
     computed: {
-        getFilteredGenre(genre) {
-            console.log(genre);
-            return genre;
+        getFilteredGenre() {
+            console.log(this.genre);
+            return this.genre;
         }
     }
 }
