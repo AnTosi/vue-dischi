@@ -13,6 +13,12 @@
 
 <script>
 export default {
-    name: Selector
+    name: 'Selector',
+
+    data() {
+        return {
+            genre: ""
+        }
+    },
 }
 </script>
