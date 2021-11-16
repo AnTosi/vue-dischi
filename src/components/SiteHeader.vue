@@ -18,13 +18,11 @@ export default {
     name: 'SiteHeader',
 
     data() {
-        let genre;
-        return genre
+        return {
+            genre: ""
+        }
     },
 
-    props: {
-        genre: String
-    }
 }
 
 </script>
