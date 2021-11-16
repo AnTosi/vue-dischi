@@ -1,6 +1,7 @@
 <template>
     <div class="bg_mainblue">
         <Selector @filter-genre="filterGenre"/>
+        <SelectorAuthor @filter-author="filterAuthor"/>
         <div class="justify-content-center d-flex flex-wrap py_90">
             <div v-show="loading">
                 <Loader/>
@@ -27,12 +28,14 @@
 import axios from 'axios';
 import Loader from './Loader.vue';
 import Selector from './Selector.vue';
+import SelectorAuthor from './SelectorAuthor.vue'
 
 export default {
     name: 'SiteMain',
     components: {
         Selector,
-        Loader
+        Loader,
+        SelectorAuthor
     },
     
     data() {
@@ -40,6 +43,7 @@ export default {
         return {
             music: [],
             API_URL: "https://flynn.boolean.careers/exercises/api/array/music",
+            // filterByGenre: "",
         };
 
     },
@@ -48,17 +52,49 @@ export default {
         setTimeout(this.callApi, 3000);
     },
 
+
+    // computed: {
+    //     getFilteredGenre(genre) {
+    //         if (genre == 'All') {
+    //             return this.music
+    //         } else {
+    //             console.log(genre);
+    //             const filteredGenre = this.music.filter(album => {
+    //             return album.genre.includes(genre)}
+    //             );
+    //             return filteredGenre
+    //         }
+
+        //in questo caso la ricerca andava fatta con la computed property ma non ho avuto abbastanza tempo per farlo
+
+
     methods: {
 
         filterGenre(genre) {
             if (genre == 'All') {
-                this.callApi()
+                return this.callApi()
             } else {
+                //non posso cercare tra tutti ma solo tra i già filtrati, non faccio in tempo a debuggare
                 console.log(genre);
                 const filteredGenre = this.music.filter(album => {
                 return album.genre.includes(genre)}
                 );
                 this.music = filteredGenre;
+            }
+        },
+            // this.filteredGenre = genre;
+        // },
+
+        filterAuthor(author) {
+            if (author == 'All') {
+                return this.callApi()
+            } else {
+                //non posso cercare tra tutti ma solo tra i già filtrati, non faccio in tempo a debuggare
+                console.log(author);
+                const filteredAuthor = this.music.filter(album => {
+                return album.author.includes(author)}
+                );
+                this.music = filteredAuthor;
             }
         },
 
@@ -70,7 +106,7 @@ export default {
                 this.music = r.data.response;
                 // console.log(this.music);
                 this.loading = false;
-                console.log(this.music.genre);
+                // console.log(this.music.genre);
             })
         },
 
