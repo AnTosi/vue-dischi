@@ -1,9 +1,6 @@
 <template>
     <div class="bg_mainblue">
-        <button @click="logGenre">
-            bubbo
-        </button>
-        <Selector @filter-genre="passGenre"/>
+        <Selector @filter-genre="filterGenre"/>
         <div class="justify-content-center d-flex flex-wrap py_90">
             <div v-show="loading">
                 <Loader/>
@@ -21,11 +18,6 @@
                 <p class="my-0 text-muted">
                     {{album.year}}
                 </p>
-            </div>
-            <div>
-                <button @click="logGenre">
-                    bibbo
-                </button>
             </div>     
         </div>
     </div>
@@ -58,11 +50,15 @@ export default {
 
     methods: {
 
-        passGenre(genre) {
-            if (genre !== ""){
+        filterGenre(genre) {
+            if (genre == 'All') {
+                this.callApi()
+            } else {
                 console.log(genre);
-                return genre
-
+                const filteredGenre = this.music.filter(album => {
+                return album.genre.includes(genre)}
+                );
+                this.music = filteredGenre;
             }
         },
 
@@ -70,16 +66,14 @@ export default {
             axios
             .get(this.API_URL)
             .then((r) => {
-                console.log(r.data);
+                // console.log(r.data);
                 this.music = r.data.response;
-                console.log(this.music);
+                // console.log(this.music);
                 this.loading = false;
+                console.log(this.music.genre);
             })
         },
 
-        logGenre(){
-            console.log(this.genre);
-        }
     }
 
 }
