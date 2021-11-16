@@ -42,6 +42,7 @@ export default {
             music: [],
             API_URL: "https://flynn.boolean.careers/exercises/api/array/music",
         };
+
     },
 
     mounted() {
@@ -61,7 +62,7 @@ export default {
         },
 
         logGenre(){
-            console.log(genre);
+            console.log(this.genre);
         }
     },
 

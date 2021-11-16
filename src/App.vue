@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div>
-      <SiteHeader @filter-genre="passGenre"/>
+      <SiteHeader />
     </div>
     <div>
-      <SiteMain/>
+      <SiteMain @filter-genre="passGenre"/>
     </div>
   </div>
 </template>
