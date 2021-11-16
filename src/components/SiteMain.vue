@@ -3,25 +3,20 @@
         <button @click="logGenre">
             bubbo
         </button>
-        <label for="filter-genre" class="px-2">Filter albums by genre:</label>
-        <select v-model="genre" @change="$emit('filter-genre', genre)" name="filter-genre" id="filter-genre">
-            <option value="all">All</option>
-            <option value="rock">Rock</option>
-            <option value="jazz">Jazz</option>
-            <option value="pop">Pop</option>
-            <option value="metal">Metal</option>
-        </select>
+        <Selector />
         <AlbumList />
     </div>
 </template>
 
 <script>
 import AlbumList from './AlbumList.vue';
+import Selector from './Selector.vue';
 
 export default {
     name: 'SiteMain',
     components: {
-        AlbumList
+        AlbumList,
+        Selector
     },
     
     data() {
