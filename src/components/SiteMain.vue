@@ -1,5 +1,8 @@
 <template>
     <div class="bg_mainblue">
+        <button @click="logGenre">
+            bubbo
+        </button>
         <AlbumList />
     </div>
 </template>
@@ -11,7 +14,18 @@ export default {
     name: 'SiteMain',
     components: {
         AlbumList
+    },
+
+    props: {
+        genre: String
+    },
+
+    methods: {
+        logGenre() {
+            console.log(this.genre);
+        }   
     }
+
 }
 </script>
 

@@ -30,9 +30,11 @@ export default {
 
   methods: {
     passGenre(genre) {
-      if (genre !== "")
-      console.log(genre);
-      return genre
+      if (genre !== ""){
+        console.log(genre);
+        return genre
+
+      }
     }
   }
 }

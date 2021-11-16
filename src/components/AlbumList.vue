@@ -16,7 +16,12 @@
                 <p class="my-0 text-muted">
                     {{album.year}}
                 </p>
-        </div>        
+        </div>
+        <div>
+            <button @click="logGenre">
+                bibbo
+            </button>
+        </div>     
     </div>
 </template>
 
@@ -25,7 +30,12 @@ import axios from 'axios';
 import Loader from './Loader.vue';
 
 export default {
-  components: { Loader },
+    components: { Loader },
+
+    props: {
+        genre: String
+    },
+
     data() {
         this.loading = true;
         return {
@@ -35,7 +45,6 @@ export default {
     },
 
     mounted() {
-        
         setTimeout(this.callApi, 3000);
     },
 
@@ -49,6 +58,17 @@ export default {
                 console.log(this.music);
                 this.loading = false;
             })
+        },
+
+        logGenre(){
+            console.log(this.genre);
+        }
+    },
+
+    computed: {
+        getFilteredGenre(genre) {
+            console.log(genre);
+            return genre;
         }
     }
 }
