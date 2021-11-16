@@ -16,6 +16,10 @@
 
 export default {
     name: 'SiteHeader',
+
+    props: {
+        genre: String
+    }
 }
 
 </script>

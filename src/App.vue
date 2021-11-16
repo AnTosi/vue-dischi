@@ -22,11 +22,11 @@ export default {
     SiteHeader,
     SiteMain
   },
-  data() {
-    return {
-      genre: ""
-    };
-  },
+  // data() {
+  //   return {
+      
+  //   };
+  // },
 
   methods: {
     passGenre(genre) {

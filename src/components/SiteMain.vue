@@ -21,8 +21,8 @@ export default {
     },
 
     methods: {
-        logGenre(genre) {
-            console.log(genre);
+        logGenre() {
+            console.log(this.genre);
         }   
     }
 
