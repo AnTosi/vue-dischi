@@ -1,7 +1,7 @@
 <template>
     <div>
             <label for="filter-genre" class="px-2">Filter albums by genre:</label>
-            <select name="filter-genre" id="filter-genre">
+            <select v-model="selected" @change="logSelected" name="filter-genre" id="filter-genre">
                 <option value="all">All</option>
                 <option value="rock">Rock</option>
                 <option value="jazz">Jazz</option>
@@ -13,6 +13,10 @@
 
 <script>
 export default {
-    
+    methods: {
+        logSelected(){
+            console.log(this.selected);
+        }
+    }
 }
 </script>

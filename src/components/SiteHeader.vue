@@ -42,7 +42,7 @@ export default {
         border-style: none;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
-        width: 120px;
+        width: 80px;
         cursor: pointer;
     }
 
