@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <SiteHeader @filter-genre="filterGenre"/>
+      <SiteHeader @filter-genre="passGenre"/>
     </div>
     <div>
       <SiteMain/>
@@ -22,6 +22,19 @@ export default {
     SiteHeader,
     SiteMain
   },
+  data() {
+    return {
+      genre: ""
+    };
+  },
+
+  methods: {
+    passGenre(genre) {
+      if (genre !== "")
+      console.log(genre);
+      return genre
+    }
+  }
 }
 </script>
 
