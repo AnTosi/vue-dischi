@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <SiteHeader/>
+      <SiteHeader @filter-genre="filterGenre"/>
     </div>
     <div>
       <SiteMain/>
@@ -21,7 +21,7 @@ export default {
   components: {
     SiteHeader,
     SiteMain
-  }
+  },
 }
 </script>
 
