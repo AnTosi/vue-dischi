@@ -1,23 +1,18 @@
 <template>
     <div class="bg_bluegrey d-flex align-items-center">
         <img src="../assets/spot_logo.png" alt="">
-        <div>
-            <label for="filter-genre" class="px-2">Filter albums by genre:</label>
-            <select name="filter-genre" id="filter-genre">
-                <option value="all">All</option>
-                <option value="rock">Rock</option>
-                <option value="jazz">Jazz</option>
-                <option value="pop">Pop</option>
-                <option value="metal">Metal</option>
-            </select>
-        </div>
+        <FilterGenre />
     </div>
 </template>
 
 <script>
+import FilterGenre from './FilterGenre.vue';
 
 export default {
-    name: 'SiteHeader'
+    name: 'SiteHeader',
+    components: {
+        FilterGenre
+    }
 }
 </script>
 
@@ -30,8 +25,9 @@ export default {
         height: 70px;
         img {
             height: 50px;
-            margin-top: 10px;
             margin-left: 10px;
+            margin-right: 1rem;
+
         }
     }
     label  {
@@ -50,4 +46,5 @@ export default {
         cursor: pointer;
     }
 
+    
 </style>
