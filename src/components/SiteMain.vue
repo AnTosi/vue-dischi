@@ -31,6 +31,7 @@ export default {
     },
 
     methods: {
+
         logGenre() {
             console.log(this.genre);
         }   
